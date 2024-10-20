@@ -1,0 +1,14 @@
+Header
+    -Logo
+    -Nav items
+
+Body
+    -search input
+    -restaurant container
+        -restaurant card
+
+Footer
+    -copyright
+    -links
+    -address
+    -contacts
