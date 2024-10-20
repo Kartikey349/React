@@ -44,3 +44,12 @@
     grid-template-columns:  220px 220px 220px 220px 1fr;
     row-gap: 20px;
 }
+.res-card h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.res-card h4{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 0;
+}
