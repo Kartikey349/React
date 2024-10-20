@@ -6,6 +6,8 @@ Body
     -search input
     -restaurant container
         -restaurant card
+            -img
+            -Name of Res, star rating, cuisine, etc
 
 Footer
     -copyright

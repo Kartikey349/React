@@ -20,10 +20,42 @@ const Header = () => {
     )
 }
 
+const styleCard = {
+    backgroundColor: "#f0f0f0"
+}
+
+//const RestaurentCard = ({resName, cuisines}) => destructuring
+//const {resName, cuisines} = props;
+const RestaurentCard = (props) => {
+    console.log(props)
+    return(
+        <div className="res-card" style = {styleCard}>
+            <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/9/17/c213682d-bfa3-4047-8fa7-3a0cc00674c9_79748.jpg" />
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>4.3 stars</h4>
+            <h4>30 mintues</h4>
+        </div>
+    )
+}
+
+
+
+const Body = () => {
+    return(<div className="body">
+        <div className="search">Search</div>
+        <div className="res-container">
+            <RestaurentCard resName= "Domino's pizza" cuisine= "Italian, Indian" />
+            <RestaurentCard resName= "KFC" cuisine="burger, fastfood" />
+        </div>
+    </div>)
+}
+
 const AppLayout = () => {
     return (
         <div className="app">
             <Header />
+            <Body />
         </div>
     )
 }
