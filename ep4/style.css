@@ -23,11 +23,12 @@
 }
 
 .res-card{
-    width: 200px;
-    height: 300px;
-    border: 1px solid gray;
-    box-shadow: 0px 0px 10px gray;
-    padding: 5px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
 }
 
 .search{
@@ -40,9 +41,9 @@
 }
 
 .res-container{
-    display: grid;
-    grid-template-columns:  220px 220px 220px 220px 1fr;
-    row-gap: 20px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 .res-card h3{
     margin-top: 10px;
