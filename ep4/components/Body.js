@@ -27,11 +27,12 @@ async function fetchApi(){
  }
      
 //conditional rendering
- if(listOfRestaurant.length === 0){
-    return <Shimmer />;
- }
+//  if(listOfRestaurant.length === 0){
+//     return <Shimmer />;
+//  }
 
-    return(<div className="body">
+    return listOfRestaurant.length === 0 ? <Shimmer /> : (
+    <div className="body">
 
         {/* <div className="search">
             <input id="search-bar" type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
@@ -58,7 +59,7 @@ async function fetchApi(){
         <div className="res-container">
            {
             listOfRestaurant.map((restaurant) => (
-                <RestaurentCard key={restaurant.info.id} resData={restaurant} />))
+                <RestaurentCard key={restaurant.info.id}  resData={restaurant} />))
            }
         </div>
     </div>)
