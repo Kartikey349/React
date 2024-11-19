@@ -11,6 +11,7 @@ function filterData(searchText, listOfRestaurant){
 
 const Body = () => {
     const [searchText, setSearchText] = useState("")
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [listOfRestaurant, setListOfRestaurant] = useState([]); 
 
 useEffect(() => {
@@ -24,7 +25,10 @@ async function fetchApi(){
     const json =  await data.json();
 
     console.log(json)
+    
     setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+    setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
  }
      
 //conditional rendering
@@ -41,7 +45,7 @@ async function fetchApi(){
             <button className="search-btn" onClick={() => {
                 const data = filterData(searchText, listOfRestaurant);
 
-                setListOfRestaurant(data);
+                setFilteredRestaurant(data);
             }}>search</button>
 
         </div>
@@ -59,7 +63,7 @@ async function fetchApi(){
 
         <div className="res-container">
            {
-            listOfRestaurant.map((restaurant) => (
+            filteredRestaurant.map((restaurant) => (
                 <RestaurentCard key={restaurant.info.id}  resData={restaurant} />))
            }
         </div>
