@@ -20,11 +20,9 @@ useEffect(() => {
 
 
 async function fetchApi(){
-    const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=23.2381903&lng=77.43218759999999&carousel=true&third_party_vendor=1");
+    const data = await fetch("https://foodfire.onrender.com/api/restaurants?lat=23.259933&lng=77.412613&page_type=DESKTOP_WEB_LISTING");
 
     const json =  await data.json();
-
-    console.log(json)
     
     setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
