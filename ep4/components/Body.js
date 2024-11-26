@@ -2,6 +2,7 @@ import RestaurentCard from "./RestaurantCard";
 // import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, listOfRestaurant){
     const filterData = listOfRestaurant.filter((restaurant) => restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
@@ -38,7 +39,7 @@ async function fetchApi(){
     <div className="body">
 
         <div className="search">
-            <input id="search-bar" type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+            <input id="search-bar" placeholder="search...." type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
 
             <button className="search-btn" onClick={() => {
                 const data = filterData(searchText, listOfRestaurant);
@@ -53,7 +54,7 @@ async function fetchApi(){
             onClick={() => {
               const filteredList = listOfRestaurant.filter((restaurant) =>  restaurant.info.avgRating > 4.2
                 );
-                setListOfRestaurant(filteredList);
+                setFilteredRestaurant(filteredList);
             }}>
                 top rated restaurant
             </button>
@@ -61,8 +62,11 @@ async function fetchApi(){
 
         <div className="res-container">
            {
-            filteredRestaurant.map((restaurant) => (
-                <RestaurentCard key={restaurant.info.id}  resData={restaurant} />))
+            filteredRestaurant.map((restaurant) => ( 
+            <Link key={restaurant.info.id}  
+            to={"/restaurant/" + restaurant.info.id}> <RestaurentCard 
+                resData={restaurant} /> 
+            </Link>))
            }
         </div>
     </div>)
