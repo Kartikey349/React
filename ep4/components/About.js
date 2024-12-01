@@ -7,10 +7,10 @@ export const About = () => {
             <h1>About</h1>
             <h2>Hey this is about page</h2>
 
-            <User name={"kartikey (function)"} />
+            {/* <User name={"kartikey (function)"} /> */}
 
 
-            <UserClass name={"Kartikey (class)"} location={"Bhopal class"} />
+            <UserClass />
         </div>
     )
 }
