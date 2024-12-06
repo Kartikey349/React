@@ -3,6 +3,7 @@ import RestaurentCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import { useOnlineStatus } from "../utils/useOnlineStatus";
 
 function filterData(searchText, listOfRestaurant){
     const filterData = listOfRestaurant.filter((restaurant) => restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
@@ -34,6 +35,12 @@ async function fetchApi(){
 //  if(listOfRestaurant.length === 0){
 //     return <Shimmer />;
 //  }
+
+const onlineStatus = useOnlineStatus();
+
+if(onlineStatus === false){
+    return <h1>Seems like you are Offline!!! Please check your internet connection</h1>
+}
 
     return listOfRestaurant.length === 0 ? <Shimmer /> : (
     <div className="body">
