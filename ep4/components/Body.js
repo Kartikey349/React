@@ -45,10 +45,10 @@ if(onlineStatus === false){
     return listOfRestaurant.length === 0 ? <Shimmer /> : (
     <div className="body">
 
-        <div className="search">
-            <input id="search-bar" placeholder="search...." type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+        <div className="search text-center">
+            <input id="search-bar" className="border border-solid border-black p-2 rounded-sm" placeholder="search...." type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
 
-            <button className="search-btn" onClick={() => {
+            <button className="search-btn bg-green-600 p-2 ml-2 rounded-sm text-white" onClick={() => {
                 const data = filterData(searchText, listOfRestaurant);
 
                 setFilteredRestaurant(data);
@@ -56,18 +56,18 @@ if(onlineStatus === false){
 
         </div>
 
-        <div className="filter">
-            <button className="filter-btn" 
+        <div className="filter text-center my-4">
+            <button className="filter-btn border border-solid border-black px-6 rounded-md bg-gray-100" 
             onClick={() => {
               const filteredList = listOfRestaurant.filter((restaurant) =>  restaurant.info.avgRating > 4.2
                 );
                 setFilteredRestaurant(filteredList);
             }}>
-                top rated restaurant
+                Top rated Restaurant
             </button>
         </div>
 
-        <div className="res-container">
+        <div className="res-container flex flex-wrap justify-center">
            {
             filteredRestaurant.map((restaurant) => ( 
             <Link key={restaurant.info.id}  

@@ -17,7 +17,7 @@ export const RestaurantMenu = () => {
         costForTwoMessage,
     } = resInfo?.cards[2]?.card?.card?.info;
 
-    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card;
+    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
 
 
     return(
