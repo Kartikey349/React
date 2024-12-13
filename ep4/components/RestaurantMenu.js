@@ -32,7 +32,7 @@ export const RestaurantMenu = () => {
             <h3 className="font-bold text-lg">{cuisines.join(", ")} - {costForTwoMessage}</h3>
 
            {categories.map((category) => {
-            return <RestaurantCategory data={category?.card?.card} />
+            return <RestaurantCategory key={category.card.card.title} data={category?.card?.card} />
            })} 
         </div>
     )
