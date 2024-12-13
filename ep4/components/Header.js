@@ -34,7 +34,7 @@ const Header = () => {
                         <Link to="/grocery">Grocery</Link>
                     </li>
                     
-                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                    <li><i className="fa-solid fa-cart-shopping"></i></li>
 
                     <button onClick={() => { 
                        btnNameReact ==="Login" ? setBtnName("Logout") : setBtnName("Login");
