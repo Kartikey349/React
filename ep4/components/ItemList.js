@@ -7,12 +7,12 @@ export const ItemList = ({items}) => {
            {items.map((item)=> {
             return (
                 <div key={item.card.info.id} className="flex justify-between p-2 m-1 border-b-2 text-left items-center">
-                    <div className=" w-9/12">
+                    <div className="w-9/12">
                     <div className="py-2">
                         <span>{item.card.info.name}</span>
                         <span> - ₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
                     </div>   
-                    <p className="text-xs">{item.card.info.description}</p>
+                    <p className="text-xs text-gray-600">{item.card.info.description}</p>
                     </div>
 
                 <div className="w-3/12 p-4 relative">
@@ -20,7 +20,7 @@ export const ItemList = ({items}) => {
                         <button className="bg-black text-white shadow-lg text-sm rounded-sm p-[2px] ">Add+</button>
                     </div>
 
-                    <img src= {CDN_URL + item.card.info.imageId} className=" w-full"
+                    <img src= {CDN_URL + item.card.info.imageId} className="w-full"
                     />
                 </div>
                 </div>

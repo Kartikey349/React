@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { ItemList } from "./ItemList"
 
-export const RestaurantCategory = ({data}) =>{
-
-    const [showItem, setShowItem] = useState(false)
+export const RestaurantCategory = ({data, showItems, setShowIndex}) =>{
 
     const handleClick = () =>{
         // if(showItem === false){
@@ -11,8 +9,7 @@ export const RestaurantCategory = ({data}) =>{
         // }else{
         //     setShowItem(false);
         // }
-
-        setShowItem(!showItem);
+        setShowIndex();
     }
 
     return (
@@ -26,7 +23,7 @@ export const RestaurantCategory = ({data}) =>{
                     
                 </div>
 
-                {showItem && <ItemList items={data.itemCards} />}
+                {showItems && <ItemList items={data.itemCards} />}
            </div>
         </div>
     )
