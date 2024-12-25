@@ -40,7 +40,7 @@ export const RestaurantMenu = () => {
             
             //controlled component
             showItems={index === showIndex ? true : false} 
-            setShowIndex={()=> setShowIndex(index)}
+            setShowIndex={() => setShowIndex(index === showIndex ? null : index)}
             />
            })} 
         </div>
